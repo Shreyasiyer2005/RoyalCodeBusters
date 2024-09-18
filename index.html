@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMART TRAVEL</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>SMART TRAVEL</h1>
+        <p class="tagline">Travelling made easier</p>
+    </header>
+
+    <section class="city-selection">
+        <h2>Select a City in India</h2>
+        <select id="cityDropdown" onchange="showTouristPlaces()">
+            <option value="">--Select a City--</option>
+            <!-- Add more cities as needed -->
+            <option value="Mumbai">Mumbai</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Bangalore">Bangalore</option>
+            <option value="Jaipur">Jaipur</option>
+            <option value="Kolkata">Kolkata</option>
+            <option value="Chennai">Chennai</option>
+            <option value="Hyderabad">Hyderabad</option>
+            <option value="Pune">Pune</option>
+            <option value="Ahmedabad">Ahmedabad</option>
+            <option value="Varanasi">Varanasi</option>
+        </select>
+    </section>
+
+    <section id="touristPlaces" class="hidden">
+        <h2>Tourist Places in Selected City</h2>
+        <ul id="placesList"></ul>
+        <button onclick="showHotels()">Next: Show Hotels</button>
+    </section>
+
+    <section id="hotelSelection" class="hidden">
+        <h2>Select a Hotel</h2>
+        <select id="hotelDropdown"></select>
+        <button onclick="showBookingSection()">Next: Book Hotel</button>
+    </section>
+
+    <section id="bookingSection" class="hidden">
+        <h2>Book Your Stay</h2>
+        <label for="dateRange">Select Dates:</label>
+        <div class="date-input-container">
+            <input type="date" id="checkinDate" placeholder="Check-in Date" />
+            <input type="date" id="checkoutDate" placeholder="Check-out Date" />
+        </div>
+        <button onclick="bookHotel()">Book Now</button>
+    </section>
+
+    <section id="confirmation" class="hidden">
+        <h2>Booking Confirmation</h2>
+        <p id="confirmationMessage"></p>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
